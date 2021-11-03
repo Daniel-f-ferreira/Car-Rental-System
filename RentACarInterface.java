@@ -1,3 +1,6 @@
+//This project was executed by Daniel Ferreira 2020335
+//This project was executed by Eric Kim Mabe 2020366
+
 package ooc.yoursolution;
 
 import ooc.enums.Make;
@@ -11,6 +14,48 @@ import java.util.List;
  */
 public interface RentACarInterface {
 
+    class RentACar implements RentACarInterface
+{
+    private String name;
+    private int numberOfCars;
+    private List<CarInterface> cars;
+
+    public List<CarInterface> getCars(){
+        return cars;
+    }
+
+    public void setCars(List<CarInterface> cars){
+        this.cars = cars;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public boolean checkAvailability(Month month, int day, Make make, int lengthOfRent){
+
+    }
+
+    public int getCarAvailable(Month month, int day, Make make, int lengthOfRent){
+
+    }
+
+    public boolean bookCar(Month month, int day, Make make, int lengthOfRent){
+
+    }
+    
+    public void setNumberOfCars(int numberOfCars){
+        this.numberOfCars = numberOfCars;
+    }
+
+    public int getNumberOfCars(){
+        return numberOfCars;
+    }
+}
     /**
      * Return the full list of cars.
      *
