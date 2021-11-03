@@ -16,65 +16,52 @@ import java.util.Map;
  */
 public interface CarInterface {
     
-    /**
-     * This method in in charge of creating the calendar of availability 
-     * of the car for the whole year. 
-     * The calendar should be a Map that uses the Month as the key, 
-     * and an array of boolean as its associated value.
-     * 
-     * @return Map of availability
-     */
-    public Map<Month, boolean[]> createAvailability();
+class Car implements CarInterface
+{
+    private int id;
+    private Make make;
+    private double rate;
+    private Month calendar;
+    private static int counter = 1;
+
+    // The ID starts as 1 and increases when a new car is created
+    public Car() {
+        id = counter;
+        counter++;
+    }
+
+    public Map<Month, boolean[]> createAvailability(){
+
+    }
     
-    /**
-     * Getter method for the make of this car.
-     * 
-     * @return the make of the car
-     */
-    public Make getMake();
+    public Make getMake(){
+        return make;
+    }
     
-    /**
-     * Sets the make of the car.
-     * 
-     * @param make 
-     */
-    public void setMake(Make make);
+    public void setMake(Make make){
+        this.make = make;
+    }
     
-    /**
-     * Getter method for the rate of this car.
-     * 
-     * @return rate of the car.
-     */
-    public double getRate();
+    public double getRate(){
+        return rate;
+    }
     
-    /**
-     * Sets the rate of the car.
-     * 
-     * @param rate 
-     */
-    public void setRate(double rate);
+    public void setRate(double rate){
+        this.rate = rate;
+    }
     
-    /**
-     * Getter method for the availability calendar of this car.
-     * 
-     * @return Map of availability
-     */
     public Map<Month, boolean[]> getAvailability();
     
-    
-    /**
-     * Sets the availability calendar of the car.
-     * 
-     * @param availability 
-     */
     public void setAvailability(Map<Month, boolean[]> availability);
     
-    /**
-     * Getter method for the id of this car.
-     * 
-     * @return 
-     */
-    public int getId();
+    public int getId(){
+        return id;
+    }
+    
+    public boolean isAvailable(Month month, int day);
+    
+    public boolean book(Month month, int day);
+}
     
     /**
      * Returns whether or not the car is available on the given month and day. 
