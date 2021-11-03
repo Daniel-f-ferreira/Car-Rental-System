@@ -1,5 +1,8 @@
 package ooc.yoursolution;
-
+/**
+ *
+ * @author Eric Mabe 2020366
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 
